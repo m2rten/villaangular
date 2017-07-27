@@ -1,0 +1,35 @@
+<div id="villa-component">
+<table class="table table-striped" [mfData]="liikmed" #mf="mfDataTable" [mfRowsOnPage]="50">
+    <thead>
+    <tr>
+        <th style="width: 20%">
+            <mfDefaultSorter by="firstname">Name</mfDefaultSorter>
+        </th>
+        <th style="width: 50%">
+            <mfDefaultSorter by="lastname">Email</mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+            <mfDefaultSorter by="status">Age</mfDefaultSorter>
+        </th>
+        <th style="width: 20%">
+            <mfDefaultSorter by="type">City</mfDefaultSorter>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let liige of mf.data">
+        <td>{{liige.firstname}}</td>
+        <td>{{liige.lastname}}</td>
+        <td class="text-right">{{liige.status}}</td>
+        <td>{{liige.type | uppercase}}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+        </td>
+    </tr>
+    </tfoot>
+</table>
+</div>
