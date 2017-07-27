@@ -13,6 +13,9 @@ import { AdminStartService }  from './admin-start.service';
 export class AdminStartComponent implements OnInit {
   liige: Liige;
   liikmed: Liige[];
+  public rowsOnPage = 10;
+public sortBy = "lastname";
+public sortOrder = "asc";
 
   constructor(
     private route: ActivatedRoute,

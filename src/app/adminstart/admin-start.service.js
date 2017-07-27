@@ -17,7 +17,7 @@ var AdminStartService = (function () {
     function AdminStartService(http) {
         this.http = http;
         this.heroesUrl = 'api/heroes'; // URL to web api
-        this.villaUrl = 'http://localhost:3010/api/v1/liikmed';
+        this.villaUrl = 'http://localhost:3010/api/v1/saldo';
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     AdminStartService.prototype.getLiikmed = function () {

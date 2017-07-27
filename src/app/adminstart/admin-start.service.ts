@@ -13,7 +13,7 @@ import { Liige } from '../liige';
 export class AdminStartService {
 
 private heroesUrl = 'api/heroes';  // URL to web api
-private villaUrl = 'http://localhost:3010/api/v1/liikmed'
+private villaUrl = 'http://localhost:3010/api/v1/saldo'
 private headers = new Headers({'Content-Type': 'application/json'});
 
 constructor(private http: Http) { }

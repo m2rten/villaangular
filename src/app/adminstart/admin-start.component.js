@@ -18,6 +18,9 @@ var AdminStartComponent = (function () {
         this.route = route;
         this.location = location;
         this.adminStartService = adminStartService;
+        this.rowsOnPage = 10;
+        this.sortBy = "lastname";
+        this.sortOrder = "asc";
     }
     AdminStartComponent.prototype.ngOnInit = function () {
         console.log("AdminStartComponent init");
