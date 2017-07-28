@@ -12,9 +12,9 @@ require("rxjs/add/operator/switchMap");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
-var admin_start_service_1 = require("./admin-start.service");
-var AdminStartComponent = (function () {
-    function AdminStartComponent(route, location, adminStartService) {
+var admin_start_service_1 = require("../admin-start.service");
+var SaldoComponent = (function () {
+    function SaldoComponent(route, location, adminStartService) {
         this.route = route;
         this.location = location;
         this.adminStartService = adminStartService;
@@ -22,25 +22,25 @@ var AdminStartComponent = (function () {
         this.sortBy = "lastname";
         this.sortOrder = "asc";
     }
-    AdminStartComponent.prototype.ngOnInit = function () {
+    SaldoComponent.prototype.ngOnInit = function () {
         console.log("AdminStartComponent init");
         this.getLiikmed();
     };
-    AdminStartComponent.prototype.getLiikmed = function () {
+    SaldoComponent.prototype.getLiikmed = function () {
         var _this = this;
         this.adminStartService.getLiikmed().then(function (returnedliikmed) { return _this.liikmed = returnedliikmed; });
         console.log(this.liikmed);
     };
-    return AdminStartComponent;
+    return SaldoComponent;
 }());
-AdminStartComponent = __decorate([
+SaldoComponent = __decorate([
     core_1.Component({
-        selector: 'admin-start',
-        templateUrl: './admin-start.component.html'
+        selector: 'saldo',
+        templateUrl: './saldo.component.html'
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute,
         common_1.Location,
         admin_start_service_1.AdminStartService])
-], AdminStartComponent);
-exports.AdminStartComponent = AdminStartComponent;
-//# sourceMappingURL=admin-start.component.js.map
+], SaldoComponent);
+exports.SaldoComponent = SaldoComponent;
+//# sourceMappingURL=saldo.component.js.map

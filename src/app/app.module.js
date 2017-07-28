@@ -14,6 +14,9 @@ var admin_start_service_1 = require("./adminstart/admin-start.service");
 var admin_start_component_1 = require("./adminstart/admin-start.component");
 var app_routing_module_1 = require("./app-routing.module");
 var angular2_datatable_1 = require("angular2-datatable");
+var header_component_1 = require("./layout/header/header.component");
+var saldo_component_1 = require("./adminstart/saldo/saldo.component");
+var saldo_filter_component_1 = require("./adminstart/saldofilter/saldo-filter.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,7 +25,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routing_module_1.AppRoutingModule, forms_1.FormsModule, angular2_datatable_1.DataTableModule],
-        declarations: [app_component_1.AppComponent, admin_start_component_1.AdminStartComponent],
+        declarations: [app_component_1.AppComponent, admin_start_component_1.AdminStartComponent, header_component_1.HeaderComponent, saldo_component_1.SaldoComponent, saldo_filter_component_1.SaldoFilterComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [admin_start_service_1.AdminStartService]
     })

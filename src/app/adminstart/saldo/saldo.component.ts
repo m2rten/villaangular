@@ -2,14 +2,14 @@ import 'rxjs/add/operator/switchMap';
 import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
-import { Liige }         from '../liige';
-import { AdminStartService }  from './admin-start.service';
+import { Liige }         from '../../liige';
+import { AdminStartService }  from '../admin-start.service';
 
 @Component({
-  selector: 'admin-start',
-  templateUrl: './admin-start.component.html'
+  selector: 'saldo',
+  templateUrl: './saldo.component.html'
 })
-export class AdminStartComponent implements OnInit {
+export class SaldoComponent implements OnInit {
   liige: Liige;
   liikmed: Liige[];
   public rowsOnPage = 10;

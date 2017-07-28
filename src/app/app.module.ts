@@ -8,10 +8,13 @@ import { AdminStartService } from './adminstart/admin-start.service';
 import { AdminStartComponent } from './adminstart/admin-start.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { DataTableModule } from 'angular2-datatable';
+import { HeaderComponent } from './layout/header/header.component';
+import { SaldoComponent } from './adminstart/saldo/saldo.component';
+import { SaldoFilterComponent } from './adminstart/saldofilter/saldo-filter.component';
 
 @NgModule({
   imports:      [ BrowserModule, HttpModule, AppRoutingModule,  FormsModule, DataTableModule],
-  declarations: [ AppComponent, AdminStartComponent ],
+  declarations: [ AppComponent, AdminStartComponent, HeaderComponent, SaldoComponent, SaldoFilterComponent ],
   bootstrap:    [ AppComponent],
   providers:    [AdminStartService]
 })
