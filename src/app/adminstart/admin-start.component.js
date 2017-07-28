@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/switchMap");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
@@ -31,16 +32,16 @@ var AdminStartComponent = (function () {
         this.adminStartService.getLiikmed().then(function (returnedliikmed) { return _this.liikmed = returnedliikmed; });
         console.log(this.liikmed);
     };
+    AdminStartComponent = __decorate([
+        core_1.Component({
+            selector: 'admin-start',
+            templateUrl: './admin-start.component.html'
+        }),
+        __metadata("design:paramtypes", [router_1.ActivatedRoute,
+            common_1.Location,
+            admin_start_service_1.AdminStartService])
+    ], AdminStartComponent);
     return AdminStartComponent;
 }());
-AdminStartComponent = __decorate([
-    core_1.Component({
-        selector: 'admin-start',
-        templateUrl: './admin-start.component.html'
-    }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute,
-        common_1.Location,
-        admin_start_service_1.AdminStartService])
-], AdminStartComponent);
 exports.AdminStartComponent = AdminStartComponent;
 //# sourceMappingURL=admin-start.component.js.map

@@ -2,15 +2,10 @@
   <div class="panel panel-default">
     <div class="panel-heading">Filtreerimine</div>
     <div class="panel-body">
-      <div class="checkbox">
-        <label><input type="checkbox" ng-model="statusfilters.active" ng-init="statusfilters.active=true" /> Active</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" ng-model="statusfilters.deactive" ng-init="statusfilters.deactive=true"> Deactive </label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" ng-model="statusfilters.mahakantud"  ng-init="statusfilters.mahakantud=false"/> Mahakantud</label>
-      </div>
+      <section class="example-section">
+           <md-checkbox class="example-margin" [(ngModel)]="checked">Checked</md-checkbox>
+           <md-checkbox class="example-margin" [(ngModel)]="indeterminate">Indeterminate</md-checkbox>
+         </section>
     </div>
   </div>
 </form>
