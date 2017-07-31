@@ -1,9 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var Liige = (function () {
     function Liige() {
     }
     return Liige;
 }());
-exports.Liige = Liige;
-//# sourceMappingURL=liige.js.map
+export { Liige };
+//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/app/liige.js.map

@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
-var app_module_1 = require("./app/app.module");
-platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
-//# sourceMappingURL=main.js.map
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+platformBrowserDynamic().bootstrapModule(AppModule);
+//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/main.js.map

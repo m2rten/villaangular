@@ -25,7 +25,12 @@
       '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
       '@angular/cdk': 'npm:@angular/cdk/bundles/cdk.umd.js',
       '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
-
+      '@ngrx/store': 'npm:@ngrx/store/bundles/store.umd.js',
+      '@ngrx/store-devtools': 'npm:@ngrx/store-devtools/bundles/store-devtools.umd.js',
+      '@ngrx/core': 'npm:@ngrx/core/bundles/core.umd.js',
+      //'zone': 'npm:zone/bundles/zone.umd.js',
+      'traceur': 'npm:traceur/bin/traceur.js',
+      'ng2-file-upload': 'npm:ng2-file-upload/bundles/ng2-file-upload.umd.js',
       // other libraries
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',

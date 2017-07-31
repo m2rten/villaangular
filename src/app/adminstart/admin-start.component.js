@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,12 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-require("rxjs/add/operator/switchMap");
-var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var common_1 = require("@angular/common");
-var admin_start_service_1 = require("./admin-start.service");
+import 'rxjs/add/operator/switchMap';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { AdminStartService } from './admin-start.service';
 var AdminStartComponent = (function () {
     function AdminStartComponent(route, location, adminStartService) {
         this.route = route;
@@ -24,24 +22,22 @@ var AdminStartComponent = (function () {
         this.sortOrder = "asc";
     }
     AdminStartComponent.prototype.ngOnInit = function () {
-        console.log("AdminStartComponent init");
         this.getLiikmed();
     };
     AdminStartComponent.prototype.getLiikmed = function () {
         var _this = this;
         this.adminStartService.getLiikmed().then(function (returnedliikmed) { return _this.liikmed = returnedliikmed; });
-        console.log(this.liikmed);
     };
     AdminStartComponent = __decorate([
-        core_1.Component({
+        Component({
             selector: 'admin-start',
             templateUrl: './admin-start.component.html'
         }),
-        __metadata("design:paramtypes", [router_1.ActivatedRoute,
-            common_1.Location,
-            admin_start_service_1.AdminStartService])
+        __metadata("design:paramtypes", [ActivatedRoute,
+            Location,
+            AdminStartService])
     ], AdminStartComponent);
     return AdminStartComponent;
 }());
-exports.AdminStartComponent = AdminStartComponent;
-//# sourceMappingURL=admin-start.component.js.map
+export { AdminStartComponent };
+//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/app/adminstart/admin-start.component.js.map

@@ -23,11 +23,9 @@ public sortOrder = "asc";
   ) {}
 
   ngOnInit(): void {
-    console.log("AdminStartComponent init");
 this.getLiikmed();
   }
   getLiikmed(): void {
 	this.adminStartService.getLiikmed().then(returnedliikmed => this.liikmed = returnedliikmed);
-	  console.log(this.liikmed);
 	}
 }

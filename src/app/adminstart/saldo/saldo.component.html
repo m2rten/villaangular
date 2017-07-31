@@ -1,4 +1,5 @@
         <div class="panel panel-default">
+      {{   (filters | async | json)}}
             <div class="panel-heading">User information</div>
 
             <table class="table table-striped" [mfData]="liikmed" #mf="mfDataTable"
@@ -30,7 +31,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let item of mf.data">
+                <tr *ngFor="let item of mf.data | statusPipe">
                     <td>{{item.lastname}}</td>
                     <td>{{item.firstname}}</td>
                     <td>{{item.status}}</td>

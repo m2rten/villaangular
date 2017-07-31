@@ -21,7 +21,7 @@ constructor(private http: Http) { }
    getLiikmed(): Promise<Liige []> {
   return this.http.get(this.villaUrl)
              .toPromise()
-             .then(response => {console.log(response.json()); return response.json() as Liige[]})
+             .then(response => { return response.json() as Liige[]})
              .catch(this.handleError);
 }
 

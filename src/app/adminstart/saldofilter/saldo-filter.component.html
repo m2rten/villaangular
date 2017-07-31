@@ -1,10 +1,11 @@
-<form>
+<form name="saldo-filter-form">
   <div class="panel panel-default">
     <div class="panel-heading">Filtreerimine</div>
     <div class="panel-body">
       <section class="example-section">
-           <md-checkbox class="example-margin" [(ngModel)]="checked">Checked</md-checkbox>
-           <md-checkbox class="example-margin" [(ngModel)]="indeterminate">Indeterminate</md-checkbox>
+           <md-checkbox class="example-margin" [(ngModel)]="active" name="aktiivsed" (ngModelChange)="updateCheckedOptions()">Aktiivsed</md-checkbox>
+           <md-checkbox class="example-margin" [(ngModel)]="deactive" name="mitteaktiivsed" (ngModelChange)="updateCheckedOptions()" >Mitte aktiivne</md-checkbox>
+           <md-checkbox class="example-margin" [(ngModel)]="mahakantud" name="mahakantud" (ngModelChange)="updateCheckedOptions()" >Mahakantud</md-checkbox>
          </section>
     </div>
   </div>

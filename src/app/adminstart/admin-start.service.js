@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,23 +7,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var core_2 = require("@angular/core");
-var http_1 = require("@angular/http");
-var angular2_datatable_1 = require("angular2-datatable");
-require("rxjs/add/operator/toPromise");
+import { NgModule } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
+import { DataTableModule } from 'angular2-datatable';
+import 'rxjs/add/operator/toPromise';
 var AdminStartService = (function () {
     function AdminStartService(http) {
         this.http = http;
         this.heroesUrl = 'api/heroes'; // URL to web api
         this.villaUrl = 'http://localhost:3010/api/v1/saldo';
-        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        this.headers = new Headers({ 'Content-Type': 'application/json' });
     }
     AdminStartService.prototype.getLiikmed = function () {
         return this.http.get(this.villaUrl)
             .toPromise()
-            .then(function (response) { console.log(response.json()); return response.json(); })
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     AdminStartService.prototype.handleError = function (error) {
@@ -32,13 +30,13 @@ var AdminStartService = (function () {
         return Promise.reject(error.message || error);
     };
     AdminStartService = __decorate([
-        core_1.NgModule({
-            imports: [angular2_datatable_1.DataTableModule]
+        NgModule({
+            imports: [DataTableModule]
         }),
-        core_2.Injectable(),
-        __metadata("design:paramtypes", [http_1.Http])
+        Injectable(),
+        __metadata("design:paramtypes", [Http])
     ], AdminStartService);
     return AdminStartService;
 }());
-exports.AdminStartService = AdminStartService;
-//# sourceMappingURL=admin-start.service.js.map
+export { AdminStartService };
+//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/app/adminstart/admin-start.service.js.map
