@@ -7,7 +7,7 @@
                 (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
             <span class="glyphicon glyphicon-upload"></span> Upload all
         </button>
-{{successMessage}}{{errorMessage}}
+<label *ngIf="!uploader.getNotUploadedItems().length">{{successMessage}}{{errorMessage}}</label>
     </div>
 
 </div>

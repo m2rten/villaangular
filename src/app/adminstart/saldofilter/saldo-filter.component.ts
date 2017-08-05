@@ -25,15 +25,17 @@ export class SaldoFilterComponent  implements OnInit, OnDestroy {
     ) {
       this.filters = filterService.filters;
     }
-    updateCheckedOptions(){
+    updateCheckedOptions(event?){
+          //console.log(event.target.value);
           this.filterService.setSaldoFilters({"active":this.active,"deactive":this.deactive,"mahakantud":this.mahakantud});
     }
-
+updateCheckedOptions2(){
+  console.log(event);
+}
     ngOnInit() {
 
       this.subscription = this.filters
                   .subscribe(filters => {
-                      console.log(filters);
                   }, error => {
                       // Do something with error
                   });

@@ -14,4 +14,4 @@ export var filters = function (state, _a) {
             return state;
     }
 };
-//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/app/reducers/saldo-filter.reducer.js.map
+//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/app/_reducers/saldo-filter.reducer.js.map

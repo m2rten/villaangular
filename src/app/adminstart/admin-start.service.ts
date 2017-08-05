@@ -1,18 +1,12 @@
-import { NgModule }      from '@angular/core';
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import { DataTableModule } from 'angular2-datatable';
 
 import 'rxjs/add/operator/toPromise';
-
 import { Liige } from '../liige';
-@NgModule({
-  imports:      [ DataTableModule]
-})
+
 @Injectable()
 export class AdminStartService {
 
-private heroesUrl = 'api/heroes';  // URL to web api
 private villaUrl = 'http://localhost:3010/api/v1/saldo'
 private headers = new Headers({'Content-Type': 'application/json'});
 

@@ -8,29 +8,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-var AdminStartService = (function () {
-    function AdminStartService(http) {
+var MemberService = (function () {
+    function MemberService(http) {
         this.http = http;
-        this.villaUrl = 'http://localhost:3010/api/v1/saldo';
+        this.villaUrl = 'http://localhost:3010/api/v1/statuses';
         this.headers = new Headers({ 'Content-Type': 'application/json' });
     }
-    AdminStartService.prototype.getLiikmed = function () {
+    MemberService.prototype.getStatuses = function () {
         return this.http.get(this.villaUrl)
             .toPromise()
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
-    AdminStartService.prototype.handleError = function (error) {
+    MemberService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
-    AdminStartService = __decorate([
+    MemberService = __decorate([
         Injectable(),
         __metadata("design:paramtypes", [Http])
-    ], AdminStartService);
-    return AdminStartService;
+    ], MemberService);
+    return MemberService;
 }());
-export { AdminStartService };
-//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/app/adminstart/admin-start.service.js.map
+export { MemberService };
+//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/app/adminstart/_services/member.service.js.map

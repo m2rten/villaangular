@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Pipe } from '@angular/core';
-import { FilterService } from './_services/filter.service';
+import { FilterService } from '../_services/filter.service';
 var StatusPipe = (function () {
     function StatusPipe(filterService) {
         this.filterService = filterService;
@@ -17,11 +17,8 @@ var StatusPipe = (function () {
     StatusPipe.prototype.transform = function (liikmed) {
         var _this = this;
         this.filters.subscribe(function (res) {
-            console.log(res[0]);
             _this.statusToDisplay = Object.keys(res[0]).filter(function (key) { return res[0][key]; });
         });
-        console.log("transform");
-        console.log(this.statusToDisplay);
         return liikmed.filter(function (liige) { return _this.statusToDisplay.indexOf(liige.status) > -1; });
     };
     StatusPipe = __decorate([
@@ -34,4 +31,4 @@ var StatusPipe = (function () {
     return StatusPipe;
 }());
 export { StatusPipe };
-//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/app/statuspipe.js.map
+//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/app/adminstart/statuspipe.js.map

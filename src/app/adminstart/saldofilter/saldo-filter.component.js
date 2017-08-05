@@ -17,13 +17,16 @@ var SaldoFilterComponent = (function () {
         this.mahakantud = false;
         this.filters = filterService.filters;
     }
-    SaldoFilterComponent.prototype.updateCheckedOptions = function () {
+    SaldoFilterComponent.prototype.updateCheckedOptions = function (event) {
+        //console.log(event.target.value);
         this.filterService.setSaldoFilters({ "active": this.active, "deactive": this.deactive, "mahakantud": this.mahakantud });
+    };
+    SaldoFilterComponent.prototype.updateCheckedOptions2 = function () {
+        console.log(event);
     };
     SaldoFilterComponent.prototype.ngOnInit = function () {
         this.subscription = this.filters
             .subscribe(function (filters) {
-            console.log(filters);
         }, function (error) {
             // Do something with error
         });

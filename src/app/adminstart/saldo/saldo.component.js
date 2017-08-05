@@ -24,17 +24,17 @@ var SaldoComponent = (function () {
         this.sortBy = "lastname";
         this.sortOrder = "asc";
         this.filters = filterService.filters;
-        console.log(this.filters);
         this.display = Object.keys(this.filters).filter(function (key) { return _this.filters[key]; });
     }
     SaldoComponent.prototype.ngOnInit = function () {
-        console.log("AdminStartComponent init");
         this.getLiikmed();
     };
     SaldoComponent.prototype.getLiikmed = function () {
         var _this = this;
-        this.adminStartService.getLiikmed().then(function (returnedliikmed) { return _this.liikmed = returnedliikmed; });
-        console.log(this.liikmed);
+        this.adminStartService.getLiikmed().then(function (returnedliikmed) {
+            _this.liikmed = returnedliikmed;
+            console.log(_this.liikmed);
+        });
     };
     SaldoComponent = __decorate([
         Component({

@@ -7,9 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AdminStartComponent } from './adminstart/admin-start.component';
+import { FileUploadComponent } from './adminstart/fileupload/file-upload.component';
 var routes = [
     { path: '', redirectTo: '/', pathMatch: 'full' },
-    { path: 'adminstart', component: AdminStartComponent }
+    { path: 'adminstart', component: AdminStartComponent },
+    { path: 'panksisse', component: FileUploadComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

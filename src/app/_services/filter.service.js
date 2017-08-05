@@ -13,8 +13,6 @@ var FilterService = (function () {
     function FilterService(store) {
         this.store = store;
         this.filters = store.select('filters');
-        console.log("filter service constructor");
-        console.log(this.filters);
     }
     FilterService.prototype.setSaldoFilters = function (payload) {
         return this.store.dispatch({ type: 'ADD_FILTERS', payload: [payload] });

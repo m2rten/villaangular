@@ -1,23 +1,18 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <a href="#" class="navbar-right"><img style="max-height:50px; margin-right:30px" src="../assets/villa.jpg"></a>
+    <a  class="navbar-right">{{user}}<img style="max-height:50px; margin-right:5px" src="../assets/villa.jpg"></a>
     <div class="navbar-header">
-      <a class="navbar-brand" href="#" style="color:blue">Eston Villa</a>
+      <a class="navbar-brand"  style="color:blue">Eston Villa</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Valikud<span class="caret"></span></a>
+      <li><a routerLink="/adminstart">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Valikud<span class="caret">
+      </span></a>
         <ul class="dropdown-menu">
-              <li><a ui-sref="app.saldo">Saldo</a></li>
-              <li><a ui-sref="app.player">Player</a></li>
-              <li><a ui-sref="app.sisestamine">Nõude sisestamine</a></li>
-              <li><a ui-sref="app.sulalaekumine">Sula Laekumine</a></li>
-              <li><a ui-sref="app.sulamakse">Sula Makse</a></li>
-              <li><a ui-sref="app.kokku">Kokkuvõte</a></li>
-              <li><a ui-sref="app.sulaliikumised">Sula liikumised</a></li>
-              <li><a ui-sref="app.pangaliikumised">Panga liikumised</a></li>
-              <li><a ui-sref="app.sisestapank">Sisesta Pank</a></li>
-              <li><a ui-sref="app.saajad">Saajad</a></li>
+          <nav>
+               <li><a routerLink="/adminstart" routerLinkActive="active">Start</a></li>
+               <li><a routerLink="/panksisse" >Pank Sisse</a></li>
+             </nav>
         </ul>
       </li>
     </ul>

@@ -15,7 +15,7 @@ export class FilterService {
   filters: Observable<Array<Filter>>;
     constructor(
         private store: Store<AppStore>
-    ){this.filters = store.select('filters');console.log("filter service constructor") ;console.log(this.filters)}
+    ){this.filters = store.select('filters');}
 
     setSaldoFilters(payload)
     {

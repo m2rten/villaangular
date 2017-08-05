@@ -21,8 +21,8 @@ var FileUploadComponent = (function () {
     FileUploadComponent.prototype.onSuccessItem = function (item, response, status, headers) {
         //let data = JSON.parse(response); //success server response
         console.log("Upload success");
-        console.log(response);
-        console.log(status);
+        var data = JSON.parse(response);
+        console.log(data);
         this.successMessage = "Fail on serverisse üles laetud";
     };
     FileUploadComponent.prototype.onErrorItem = function (item, response, status, headers) {

@@ -29,18 +29,18 @@ display:{};
     private filterService: FilterService
   ) {
     this.filters = filterService.filters ;
-    console.log(this.filters);
     this.display=Object.keys(this.filters).filter(key=> this.filters[key]);
 
   }
 
   ngOnInit(): void {
-    console.log("AdminStartComponent init");
 this.getLiikmed();
-
   }
   getLiikmed(): void {
-	this.adminStartService.getLiikmed().then(returnedliikmed => this.liikmed = returnedliikmed);
-	  console.log(this.liikmed);
+	this.adminStartService.getLiikmed().then(returnedliikmed => {
+    this.liikmed = returnedliikmed;
+     console.log(this.liikmed);
+  });
+
 	}
 }

@@ -17,8 +17,8 @@ export class FileUploadComponent {
   onSuccessItem(item: FileItem, response: string, status: number, headers: ParsedResponseHeaders): any {
       //let data = JSON.parse(response); //success server response
       console.log("Upload success");
-      console.log(response);
-      console.log(status);
+      let data = JSON.parse(response)
+      console.log(data);
       this.successMessage = "Fail on serverisse üles laetud";
   }
 

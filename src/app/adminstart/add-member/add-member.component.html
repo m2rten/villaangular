@@ -1,0 +1,22 @@
+<div class="panel-default">
+  <div class="panel-heading">Lisa uus liige</div>
+<form [formGroup]="memberForm" novalidate>
+  <div class="form-group">
+    <label > Eesnimi:
+      <input class="form-control" formControlName="name">
+    </label>
+  <div class="form-group">
+    <label> Tüüp:
+      <select class="form-control" FormControlName="states">
+        <option *ngFor="let status of statuses" [value]="status">{{status.status}}</option>
+      </select>
+    </label>
+  </div>
+    <p> Form value: {{memberForm.value | json }}</p>
+    <p> Form status: {{memberForm.status | json }}</p>
+    <label> Perenimi</label>
+    <label> Staatus</label>
+    <label>Tüüp</label>
+  </div>
+</form>
+</div>

@@ -6,6 +6,7 @@
            <md-checkbox class="example-margin" [(ngModel)]="active" name="aktiivsed" (ngModelChange)="updateCheckedOptions()">Aktiivsed</md-checkbox>
            <md-checkbox class="example-margin" [(ngModel)]="deactive" name="mitteaktiivsed" (ngModelChange)="updateCheckedOptions()" >Mitte aktiivne</md-checkbox>
            <md-checkbox class="example-margin" [(ngModel)]="mahakantud" name="mahakantud" (ngModelChange)="updateCheckedOptions()" >Mahakantud</md-checkbox>
+           <md-checkbox class="example-margin" #box [(ngModel)]="test" name="mahakantud2" (ngModelChange)="updateCheckedOptions2(box.name)" >Test</md-checkbox>
          </section>
     </div>
   </div>
