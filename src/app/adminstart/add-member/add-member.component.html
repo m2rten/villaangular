@@ -1,33 +1,39 @@
 <div class="panel panel-default">
   <div class="panel-heading">Lisa uus liige</div>
+  <div [hidden]="submitted">
     <div class="panel-body">
-      <form #memberForm="ngForm"  (ngSubmit)="onSubmit()" novalidate>
+      <form #memberForm="ngForm" disable=""  (ngSubmit)="onSubmit()" novalidate>
         {{diagnostic}}
         <div class="form-group">
           <label > Eesnimi:
-            <input class="form-control" [(ngModel)]="firstname">
+            <input class="form-control" [(ngModel)]="member.firstname" name="firstname">
           </label>
         </div>
         <div class="form-group">
           <label > Perenimi:
-            <input class="form-control" [(ngModel)]="lastname">
+            <input class="form-control" [(ngModel)]="member.lastname" name="lastname">
           </label>
         </div>
         <div class="form-group">
           <label> Staatus:
-            <select class="form-control"  [(ngModel)]="status">
+            <select class="form-control"  [(ngModel)]="member.status" name="status">
               <option *ngFor="let item of memberStatuses" [ngValue]="item.status">{{item.status}}</option>
             </select>
           </label>
         </div>
           <div class="form-group">
             <label>Tüüp
-              <select class="form-control" [(ngModel)]="type">
+              <select class="form-control" [(ngModel)]="member.type" name="type">
                 <option *ngFor="let type of memberTypes" [value]="type.type">{{type.type}}</option>
               </select>
             </label>
           </div>
-        <button type="submit" [disabled]="memberForm.pristine" class="btn btn-success">Save</button>
+        <button type="submit" [disabled]="false" class="btn btn-success">Save</button>
       </form>
     </div>
+  </div>
+  <div [hidden]="!submitted">
+    {{ savedMember | json }}
+<button class="btn btn-primary" (click)="submitted=false">Lisa uus</button>
+    <div>
 </div>

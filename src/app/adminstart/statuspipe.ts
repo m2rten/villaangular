@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Liige } from '../liige';
+import { Liige } from './_models/liige';
 import { FilterService } from '../_services/filter.service';
 import { Filter } from '../_models/filtersaldo';
 @Pipe({

@@ -37,13 +37,10 @@ var MemberService = (function () {
         return Promise.reject(error.message || error);
     };
     MemberService.prototype.saveMember = function (member) {
-        return this.http.post(this.saveMemberUrl, member, this.options).toPromise()
-            .then(this.extractData)
+        return this.http.post(this.saveMemberUrl, member, this.options)
+            .toPromise()
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
-    };
-    MemberService.prototype.extractData = function (res) {
-        var body = res.json();
-        return body.data || {};
     };
     MemberService = __decorate([
         Injectable(),

@@ -8,19 +8,16 @@ import { Member } from '../../_models/member'
 selector: 'add-member',
 templateUrl: './add-member.component.html',
 })
-
-
 export class AddMemberComponent implements OnInit {
 memberForm : FormGroup;
 memberStatuses : memberStatus[];
 memberTypes : memberType[];
-member:Member;
+//member:Member;
 savedMember:Member;
-
+member = new Member ();
+submitted= false;
 constructor (private fb : FormBuilder, private memberService:MemberService)
-{
-  this.createForm();
-};
+{};
 
 ngOnInit():void{
  this.memberService.getStatuses().then(statuses => this.memberStatuses = statuses);
@@ -28,21 +25,11 @@ ngOnInit():void{
 }
 
 onSubmit (){
- this.member = this.memberForm.value;
- console.log(this.member);
- console.log(this.memberForm.status);
-  this.memberService.saveMember(this.member).then(response => {this.savedMember = response});
-  console.log(this.savedMember);
-}
-
-createForm () {
-this.memberForm = this.fb.group({
-  firstname:['', Validators.required] ,
-  lastname:['', Validators.required],
-  status:[''],
-  type:['']
-})
-
-}
+  console.log(this.member);
+  this.memberService.saveMember(this.member).then(response =>
+    this.savedMember = response)
+    this.submitted = true;
+    this.member = new Member();
+  };
 
 }

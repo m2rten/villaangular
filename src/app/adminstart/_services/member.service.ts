@@ -39,13 +39,11 @@ private handleError(error: any): Promise<any> {
 
 
 saveMember(member:Member):Promise<Member>{
-  return this.http.post(this.saveMemberUrl, member, this.options).toPromise()
-      .then(this.extractData)
-      .catch(this.handleError)
+  return this.http.post(this.saveMemberUrl, member, this.options)
+  .toPromise()
+  .then(response => { return response.json() as Member[]})
+  .catch(this.handleError);
 }
-private extractData(res: Response) {
-let body = res.json();
-    return body.data || {};
-}
+
 
 }

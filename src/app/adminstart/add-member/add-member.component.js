@@ -8,13 +8,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { MemberService } from '../_services/member.service';
+import { Member } from '../../_models/member';
 var AddMemberComponent = (function () {
     function AddMemberComponent(fb, memberService) {
         this.fb = fb;
         this.memberService = memberService;
-        this.createForm();
+        this.member = new Member();
+        this.submitted = false;
     }
     ;
     AddMemberComponent.prototype.ngOnInit = function () {
@@ -24,20 +26,14 @@ var AddMemberComponent = (function () {
     };
     AddMemberComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.member = this.memberForm.value;
         console.log(this.member);
-        console.log(this.memberForm.status);
-        this.memberService.saveMember(this.member).then(function (response) { _this.savedMember = response; });
-        console.log(this.savedMember);
-    };
-    AddMemberComponent.prototype.createForm = function () {
-        this.memberForm = this.fb.group({
-            firstname: ['', Validators.required],
-            lastname: ['', Validators.required],
-            status: [''],
-            type: ['']
+        this.memberService.saveMember(this.member).then(function (response) {
+            return _this.savedMember = response;
         });
+        this.submitted = true;
+        this.member = new Member();
     };
+    ;
     AddMemberComponent = __decorate([
         Component({
             selector: 'add-member',
