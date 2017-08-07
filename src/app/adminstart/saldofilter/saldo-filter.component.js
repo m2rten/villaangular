@@ -39,6 +39,7 @@ var SaldoFilterComponent = (function () {
         Component({
             selector: 'saldo-filter',
             templateUrl: './saldo-filter.component.html',
+            styleUrls: ['./saldo-filter.component.css'],
             providers: [FilterService],
         }),
         __metadata("design:paramtypes", [FilterService])

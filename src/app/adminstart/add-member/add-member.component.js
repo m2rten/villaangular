@@ -19,12 +19,23 @@ var AddMemberComponent = (function () {
     ;
     AddMemberComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.memberService.getStatuses().then(function (statuses) { return _this.statuses = statuses; });
+        this.memberService.getStatuses().then(function (statuses) { return _this.memberStatuses = statuses; });
+        this.memberService.getTypes().then(function (types) { return _this.memberTypes = types; });
+    };
+    AddMemberComponent.prototype.onSubmit = function () {
+        var _this = this;
+        this.member = this.memberForm.value;
+        console.log(this.member);
+        console.log(this.memberForm.status);
+        this.memberService.saveMember(this.member).then(function (response) { _this.savedMember = response; });
+        console.log(this.savedMember);
     };
     AddMemberComponent.prototype.createForm = function () {
         this.memberForm = this.fb.group({
-            name: ['', Validators.required],
-            state: [''],
+            firstname: ['', Validators.required],
+            lastname: ['', Validators.required],
+            status: [''],
+            type: ['']
         });
     };
     AddMemberComponent = __decorate([

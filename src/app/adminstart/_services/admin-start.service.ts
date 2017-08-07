@@ -2,7 +2,7 @@ import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-import { Liige } from '../liige';
+import { Liige } from '../_models/liige';
 
 @Injectable()
 export class AdminStartService {

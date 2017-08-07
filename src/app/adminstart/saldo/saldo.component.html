@@ -1,9 +1,8 @@
         <div class="panel panel-default">
-      {{   (filters | async | json)}}
             <div class="panel-heading">User information</div>
 
-            <table class="table table-striped" [mfData]="liikmed" #mf="mfDataTable"
-                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+            <table style="width:100%" class="table table-striped" [mfData]="liikmed" #mf="mfDataTable"
+                    [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
                 <thead>
                   <tr>
                       <th colspan="1">
@@ -40,11 +39,11 @@
                 </tr>
                 </tbody>
                 <tfoot>
-                <tr>
+  <!--              <tr>
                     <td colspan="5">
                         <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
                     </td>
-                </tr>
+                </tr>-->
                 </tfoot>
             </table>
         </div>

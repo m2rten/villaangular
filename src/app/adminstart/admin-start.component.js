@@ -11,7 +11,7 @@ import 'rxjs/add/operator/switchMap';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { AdminStartService } from './admin-start.service';
+import { AdminStartService } from './_services/admin-start.service';
 var AdminStartComponent = (function () {
     function AdminStartComponent(route, location, adminStartService) {
         this.route = route;

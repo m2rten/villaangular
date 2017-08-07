@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from'@angular/forms';
-import { AdminStartService } from './admin-start.service';
+import { AdminStartService } from './_services/admin-start.service';
 import { AdminStartComponent } from './admin-start.component';
 import {StatusPipe } from './statuspipe';
 import { SaldoComponent } from '../adminstart/saldo/saldo.component';

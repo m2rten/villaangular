@@ -8,6 +8,7 @@ import { FilterService } from '../../_services/filter.service';
 @Component({
   selector: 'saldo-filter',
   templateUrl:'./saldo-filter.component.html',
+  styleUrls: ['./saldo-filter.component.css'],
   providers: [FilterService],
 })
 export class SaldoFilterComponent  implements OnInit, OnDestroy {

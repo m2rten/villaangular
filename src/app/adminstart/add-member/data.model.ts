@@ -10,8 +10,12 @@ export class Address {
   state  = '';
   zip    = '';
 }
-export class statuses {
+export class memberStatus {
   status ="";
+}
+
+export class memberType {
+  type = "";
 }
 export const heroes: Hero[] = [
   {

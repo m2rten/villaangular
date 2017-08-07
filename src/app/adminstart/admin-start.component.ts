@@ -2,8 +2,8 @@ import 'rxjs/add/operator/switchMap';
 import { Component, OnInit }        from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
-import { Liige }         from '../liige';
-import { AdminStartService }  from './admin-start.service';
+import { Liige }         from './_models/liige';
+import { AdminStartService }  from './_services/admin-start.service';
 
 @Component({
   selector: 'admin-start',

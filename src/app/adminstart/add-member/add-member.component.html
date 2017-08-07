@@ -1,22 +1,33 @@
-<div class="panel-default">
+<div class="panel panel-default">
   <div class="panel-heading">Lisa uus liige</div>
-<form [formGroup]="memberForm" novalidate>
-  <div class="form-group">
-    <label > Eesnimi:
-      <input class="form-control" formControlName="name">
-    </label>
-  <div class="form-group">
-    <label> Tüüp:
-      <select class="form-control" FormControlName="states">
-        <option *ngFor="let status of statuses" [value]="status">{{status.status}}</option>
-      </select>
-    </label>
-  </div>
-    <p> Form value: {{memberForm.value | json }}</p>
-    <p> Form status: {{memberForm.status | json }}</p>
-    <label> Perenimi</label>
-    <label> Staatus</label>
-    <label>Tüüp</label>
-  </div>
-</form>
+    <div class="panel-body">
+      <form #memberForm="ngForm"  (ngSubmit)="onSubmit()" novalidate>
+        {{diagnostic}}
+        <div class="form-group">
+          <label > Eesnimi:
+            <input class="form-control" [(ngModel)]="firstname">
+          </label>
+        </div>
+        <div class="form-group">
+          <label > Perenimi:
+            <input class="form-control" [(ngModel)]="lastname">
+          </label>
+        </div>
+        <div class="form-group">
+          <label> Staatus:
+            <select class="form-control"  [(ngModel)]="status">
+              <option *ngFor="let item of memberStatuses" [ngValue]="item.status">{{item.status}}</option>
+            </select>
+          </label>
+        </div>
+          <div class="form-group">
+            <label>Tüüp
+              <select class="form-control" [(ngModel)]="type">
+                <option *ngFor="let type of memberTypes" [value]="type.type">{{type.type}}</option>
+              </select>
+            </label>
+          </div>
+        <button type="submit" [disabled]="memberForm.pristine" class="btn btn-success">Save</button>
+      </form>
+    </div>
 </div>

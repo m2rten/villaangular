@@ -33,4 +33,4 @@ var AdminStartService = (function () {
     return AdminStartService;
 }());
 export { AdminStartService };
-//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/app/adminstart/admin-start.service.js.map
+//# sourceMappingURL=C:/Users/marten/code/villaangular2/src/app/adminstart/_services/admin-start.service.js.map

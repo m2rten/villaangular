@@ -16,13 +16,20 @@ var Address = (function () {
     return Address;
 }());
 export { Address };
-var statuses = (function () {
-    function statuses() {
+var memberStatus = (function () {
+    function memberStatus() {
         this.status = "";
     }
-    return statuses;
+    return memberStatus;
 }());
-export { statuses };
+export { memberStatus };
+var memberType = (function () {
+    function memberType() {
+        this.type = "";
+    }
+    return memberType;
+}());
+export { memberType };
 export var heroes = [
     {
         id: 1,
