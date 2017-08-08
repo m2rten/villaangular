@@ -32,8 +32,12 @@
       </form>
     </div>
   </div>
-  <div [hidden]="!submitted">
-    {{ savedMember | json }}
+  <div [hidden]="!submitted" *ngIf="savedMember" >
+    <ul style="list-style-type: none;">
+  <li>  {{ savedMember[0]?.firstname }}</li>
+  <li>  {{ savedMember[0]?.lastname }}</li>
+  <li>  {{ savedMember[0]?.status }}</li>
+  <li>  {{ savedMember[0]?.type }}</li>
 <button class="btn btn-primary" (click)="submitted=false">Lisa uus</button>
     <div>
 </div>

@@ -41,7 +41,7 @@ private handleError(error: any): Promise<any> {
 saveMember(member:Member):Promise<Member>{
   return this.http.post(this.saveMemberUrl, member, this.options)
   .toPromise()
-  .then(response => { return response.json() as Member[]})
+  .then(response => { return response.json() as Member})
   .catch(this.handleError);
 }
 

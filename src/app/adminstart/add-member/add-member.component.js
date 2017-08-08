@@ -15,6 +15,8 @@ var AddMemberComponent = (function () {
     function AddMemberComponent(fb, memberService) {
         this.fb = fb;
         this.memberService = memberService;
+        //member:Member;
+        this.savedMember = new Member();
         this.member = new Member();
         this.submitted = false;
     }
@@ -26,10 +28,7 @@ var AddMemberComponent = (function () {
     };
     AddMemberComponent.prototype.onSubmit = function () {
         var _this = this;
-        console.log(this.member);
-        this.memberService.saveMember(this.member).then(function (response) {
-            return _this.savedMember = response;
-        });
+        this.memberService.saveMember(this.member).then(function (response) { _this.savedMember = response; console.log(_this.savedMember); });
         this.submitted = true;
         this.member = new Member();
     };

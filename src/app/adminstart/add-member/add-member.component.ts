@@ -13,7 +13,7 @@ memberForm : FormGroup;
 memberStatuses : memberStatus[];
 memberTypes : memberType[];
 //member:Member;
-savedMember:Member;
+savedMember=new Member ();
 member = new Member ();
 submitted= false;
 constructor (private fb : FormBuilder, private memberService:MemberService)
@@ -25,10 +25,10 @@ ngOnInit():void{
 }
 
 onSubmit (){
-  console.log(this.member);
   this.memberService.saveMember(this.member).then(response =>
-    this.savedMember = response)
+    {this.savedMember = response; console.log(this.savedMember)})
     this.submitted = true;
+
     this.member = new Member();
   };
 
