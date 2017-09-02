@@ -19,6 +19,9 @@ export class StatusPipe implements PipeTransform {
     }
 
   transform(liikmed: Liige[]) {
+    if (liikmed==null) {
+  return null;
+}
     this.filters.subscribe(res => {
    this.statusToDisplay=Object.keys(res[0]).filter(key=>res[0][key]);
 });

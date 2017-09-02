@@ -9,6 +9,11 @@ var UserService = (function () {
     function UserService() {
         this.userName = "EstonVilla";
     }
+    UserService.prototype.getPermission = function (allowedGroups) {
+        console.log("Getting permissions:" + allowedGroups);
+        console.log(allowedGroups.length);
+        return true;
+    };
     UserService = __decorate([
         Injectable()
     ], UserService);

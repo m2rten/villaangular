@@ -10,9 +10,10 @@ import { AppComponent }  from './app.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { DataTableModule } from 'angular2-datatable';
 import { HeaderComponent } from './layout/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-import {  AdminStartModule } from './adminstart/admin-start.module'
+import { AdminStartModule } from './adminstart/admin-start.module';
+import { NoudedModule } from './nouded/nouded.module';
 import { UserService } from './auth/user.service';
 import { FilterService } from './_services/filter.service';
 
@@ -20,7 +21,7 @@ import { FilterService } from './_services/filter.service';
   imports:      [ BrowserModule, HttpModule, AppRoutingModule,  FormsModule, DataTableModule,
   StoreModule.provideStore({ filters}),
   StoreDevtoolsModule.instrumentOnlyWithExtension(),
-  MaterialModule,     HttpModule, AdminStartModule],
+  MaterialModule,     HttpModule, AdminStartModule,  NoudedModule, BrowserAnimationsModule],
   declarations: [ AppComponent, HeaderComponent],
   bootstrap:    [ AppComponent],
   providers:    [ FilterService, UserService]

@@ -9,19 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/toPromise';
 var AdminStartService = (function () {
     function AdminStartService(http) {
         this.http = http;
         this.villaUrl = 'http://localhost:3010/api/v1/saldo';
         this.headers = new Headers({ 'Content-Type': 'application/json' });
+        // Observable string sources
+        this.memberAnnouncedSource = new BehaviorSubject("dummy");
+        //private membersAnnouncedSource = new Subject<Liige[]>();
+        // Observable string streams
+        this.memberAnnounced$ = this.memberAnnouncedSource.asObservable();
     }
     AdminStartService.prototype.getLiikmed = function () {
         return this.http.get(this.villaUrl)
-            .toPromise()
-            .then(function (response) { return response.json(); })
-            .catch(this.handleError);
+            .map(this.extractData);
     };
+    AdminStartService.prototype.extractData = function (response) {
+        var body = response.json(); // parse JSON string into JavaScript objects
+        console.log("body:");
+        return body;
+    };
+    // Service message commands
+    AdminStartService.prototype.announceMember = function (member) {
+        this.memberAnnouncedSource.next(member);
+    };
+    // announceMembers(members: Liige[]) {
+    //   this.membersAnnouncedSource.next(members);
+    // }
     AdminStartService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);

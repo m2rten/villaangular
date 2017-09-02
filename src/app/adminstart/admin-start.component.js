@@ -17,21 +17,19 @@ var AdminStartComponent = (function () {
         this.route = route;
         this.location = location;
         this.adminStartService = adminStartService;
+        this.liikmed = new Array();
         this.rowsOnPage = 10;
         this.sortBy = "lastname";
         this.sortOrder = "asc";
     }
     AdminStartComponent.prototype.ngOnInit = function () {
-        this.getLiikmed();
-    };
-    AdminStartComponent.prototype.getLiikmed = function () {
-        var _this = this;
-        this.adminStartService.getLiikmed().then(function (returnedliikmed) { return _this.liikmed = returnedliikmed; });
     };
     AdminStartComponent = __decorate([
         Component({
             selector: 'admin-start',
-            templateUrl: './admin-start.component.html'
+            templateUrl: './admin-start.component.html',
+            styleUrls: ['./admin-start.component.css'],
+            providers: [AdminStartService]
         }),
         __metadata("design:paramtypes", [ActivatedRoute,
             Location,

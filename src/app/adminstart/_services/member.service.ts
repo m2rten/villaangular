@@ -23,8 +23,12 @@ return this.http.get(this.statusUrl)
           .catch(this.handleError);
 
 }
-
-
+updateMember(member:Member):Promise<Member>{
+  return this.http.put("http://localhost:3010/api/v1/liikmed", member, this.options)
+  .toPromise()
+  .then(response => {  return response.json() as Member })
+  .catch(this.handleError);
+}
 getTypes():Promise <memberType[]>{
   return this.http.get(this.typeUrl)
     .toPromise()
@@ -36,8 +40,6 @@ private handleError(error: any): Promise<any> {
   console.error('An error occurred', error); // for demo purposes only
   return Promise.reject(error.message || error);
 }
-
-
 saveMember(member:Member):Promise<Member>{
   return this.http.post(this.saveMemberUrl, member, this.options)
   .toPromise()

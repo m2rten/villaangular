@@ -10,35 +10,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MemberService } from '../_services/member.service';
+import { AdminStartService } from '../_services/admin-start.service';
 import { Member } from '../../_models/member';
 var AddMemberComponent = (function () {
-    function AddMemberComponent(fb, memberService) {
+    function AddMemberComponent(fb, adminStartService, memberService) {
         this.fb = fb;
+        this.adminStartService = adminStartService;
         this.memberService = memberService;
-        //member:Member;
         this.savedMember = new Member();
         this.member = new Member();
         this.submitted = false;
     }
     ;
+    AddMemberComponent.prototype.announce = function () { this.adminStartService.announceMember("Announcing a POST message"); };
     AddMemberComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.memberService.getStatuses().then(function (statuses) { return _this.memberStatuses = statuses; });
-        this.memberService.getTypes().then(function (types) { return _this.memberTypes = types; });
+        this.memberService.getStatuses().then(function (statuses) {
+            _this.memberStatuses = statuses;
+            _this.member.status = _this.memberStatuses[0].status;
+        });
+        this.memberService.getTypes().then(function (types) { _this.memberTypes = types; _this.member.type = _this.memberTypes[0].type; });
     };
     AddMemberComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.memberService.saveMember(this.member).then(function (response) { _this.savedMember = response; console.log(_this.savedMember); });
+        this.memberService.saveMember(this.member).then(function (response) { return _this.savedMember = response; });
         this.submitted = true;
         this.member = new Member();
+        this.announce();
     };
     ;
     AddMemberComponent = __decorate([
         Component({
             selector: 'add-member',
             templateUrl: './add-member.component.html',
+            styleUrls: ['./add-member.component.css']
         }),
-        __metadata("design:paramtypes", [FormBuilder, MemberService])
+        __metadata("design:paramtypes", [FormBuilder, AdminStartService,
+            MemberService])
     ], AddMemberComponent);
     return AddMemberComponent;
 }());

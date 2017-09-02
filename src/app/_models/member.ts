@@ -3,4 +3,5 @@ export class Member{
   lastname: string;
   firstname: string;
   type: string;
+  id: number;
 }

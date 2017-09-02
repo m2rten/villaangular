@@ -1,0 +1,55 @@
+
+  <div class="row" >
+    <div class="col-xs-12 col-md-4" >
+      <div class="panel panel-default">
+        <div class="panel-heading"> Sisesta ühe inimese nõue</div>
+      <div class="container">
+      <form #noueForm="ngForm">
+        <div class="form-group">
+            <label for="summa"> Summa
+                <input  class="form-control" #summa="ngModel" required type="number" step="0.01" id="summa" name="summa" [(ngModel)]="noue.summa">
+              <div [hidden]="summa.valid || summa.pristine" class="alert alert-danger">
+                  "Summa peab olema sisestatud"
+              </div>
+            </label>
+        </div>
+      <div class="form-group">
+            <label for="kaup"> Kaup
+              <input class="form-control" type="text" #kaup="ngModel" required id="kaup" name="kaup" [(ngModel)]="noue.kaup">
+            </label>
+            <div [hidden]="kaup.valid || kaup.pristine" class="alert alert-danger">
+              Kaup peab olema sisestatud!
+            </div>
+      </div>
+      <div class="form-group">
+        <label for="maksja">Maksja:
+          <select class="form-control" #maksja="ngModel" required id="maksja" name="maksja"
+          [(ngModel)]="noue.maksja">
+           <option *ngFor="let liige of liikmed" [ngValue]="liige.id" >{{liige.firstname }} {{ liige.lastname}}</option>
+         </select>
+      </label>
+      </div>
+      <div class="form-grpup">
+        <label for="kpv">Tekke kpv
+          <input type="date" class="form-control" #kpv="ngModel" [(ngModel)]="noue.kpv" required id="kpv" name="kpv">
+        </label>
+      </div>
+      {{noue | json}}<br>
+      <button class="btn btn-success" [disabled]="!noueForm.form.valid" (click)="saveNoue()" type="submit" >
+      Salvesta</button>
+    </form>
+  </div>
+</div>
+</div>
+    <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-6">Other form</div>
+          <div class="col-md-6">Other form2</div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <entered-nouded [noue]="enteredNoue"></entered-nouded>
+          </div>
+        </div>
+    </div>
+</div>

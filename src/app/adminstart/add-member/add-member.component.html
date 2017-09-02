@@ -1,43 +1,55 @@
 <div class="panel panel-default">
   <div class="panel-heading">Lisa uus liige</div>
   <div [hidden]="submitted">
-    <div class="panel-body">
-      <form #memberForm="ngForm" disable=""  (ngSubmit)="onSubmit()" novalidate>
-        {{diagnostic}}
+    <div class="panel-body" >
+      <form #memberForm="ngForm"  id="add-member-form"  >
         <div class="form-group">
-          <label > Eesnimi:
-            <input class="form-control" [(ngModel)]="member.firstname" name="firstname">
+          <label for="firstname" > Eesnimi:
+            <input class="form-control" id="firstname" [(ngModel)]="member.firstname"
+             name="firstname" #firstname="ngModel" required>
+            <div [hidden]="firstname.valid || firstname.pristine"
+                 class="alert alert-danger">
+              Eesnimi on kohustuslik
+            </div>
           </label>
         </div>
         <div class="form-group">
-          <label > Perenimi:
-            <input class="form-control" [(ngModel)]="member.lastname" name="lastname">
+          <label for="lastname"> Perenimi:
+            <input class="form-control" id="lastname" [(ngModel)]="member.lastname"
+             name="lastname" #lastname="ngModel" required>
           </label>
+          <div [hidden]="lastname.valid || lastname.pristine"
+              class="alert alert-danger">
+              Perenimi on kohustuslik
+          </div>
         </div>
         <div class="form-group">
           <label> Staatus:
-            <select class="form-control"  [(ngModel)]="member.status" name="status">
+            <select class="form-control"  [(ngModel)]="member.status" name="status" required>
               <option *ngFor="let item of memberStatuses" [ngValue]="item.status">{{item.status}}</option>
             </select>
           </label>
         </div>
           <div class="form-group">
             <label>Tüüp
-              <select class="form-control" [(ngModel)]="member.type" name="type">
-                <option *ngFor="let type of memberTypes" [value]="type.type">{{type.type}}</option>
+              <select class="form-control" [(ngModel)]="member.type" name="type" required>
+                <option *ngFor="let type of memberTypes" [value]="type.type" >{{type.type}}</option>
               </select>
             </label>
-          </div>
-        <button type="submit" [disabled]="false" class="btn btn-success">Save</button>
+        <button  style="margin-left: 60px" type="submit" [disabled]="!memberForm.form.valid"
+         class="btn btn-success" (click)="onSubmit(); memberForm.reset()">Salvesta</button>
+        </div>
       </form>
     </div>
   </div>
   <div [hidden]="!submitted" *ngIf="savedMember" >
-    <ul style="list-style-type: none;">
-  <li>  {{ savedMember[0]?.firstname }}</li>
-  <li>  {{ savedMember[0]?.lastname }}</li>
-  <li>  {{ savedMember[0]?.status }}</li>
-  <li>  {{ savedMember[0]?.type }}</li>
-<button class="btn btn-primary" (click)="submitted=false">Lisa uus</button>
-    <div>
+    <div class="alert alert-success">
+    <p>  {{ savedMember[0]?.firstname }}  {{ savedMember[0]?.lastname }}</p>
+      <p>   {{ savedMember[0]?.status }}</p>
+      <p>  {{ savedMember[0]?.type }}</p>
+    </div>
+      <div id="lisa-uus-button"     style="text-align:center ">
+          <button class="btn btn-primary"(click)="submitted=false">Lisa järgmine</button>
+        </div>
+    </div>
 </div>

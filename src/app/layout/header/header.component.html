@@ -1,20 +1,25 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <a  class="navbar-right">{{user}}<img style="max-height:50px; margin-right:5px" src="../assets/villa.jpg"></a>
-    <div class="navbar-header">
+
+    <div class="navbar-header" style="margin-left: 30px">
       <a class="navbar-brand"  style="color:blue">Eston Villa</a>
     </div>
+
+
     <ul class="nav navbar-nav">
       <li><a routerLink="/adminstart">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Valikud<span class="caret">
-      </span></a>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Valikud
+    <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <nav>
                <li><a routerLink="/adminstart" routerLinkActive="active">Start</a></li>
                <li><a routerLink="/panksisse" >Pank Sisse</a></li>
-             </nav>
+               <li><a routerLink="/nouded">Nõuded</a></li>
         </ul>
       </li>
     </ul>
+<img class="navbar-right navbar-text" style="max-height: 30px; margin-right: 20" src="../../../assets/villa.jpg">
+    <p  class="navbar-right navbar-text" style="margin-right: 20px">{{user}}</p>
   </div>
 </nav>

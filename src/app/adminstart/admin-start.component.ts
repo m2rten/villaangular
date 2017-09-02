@@ -4,28 +4,30 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location }                 from '@angular/common';
 import { Liige }         from './_models/liige';
 import { AdminStartService }  from './_services/admin-start.service';
+import { Subscription }   from 'rxjs/Subscription';
 
 @Component({
   selector: 'admin-start',
-  templateUrl: './admin-start.component.html'
+  templateUrl: './admin-start.component.html',
+  styleUrls: ['./admin-start.component.css'],
+  providers:[AdminStartService]
 })
 export class AdminStartComponent implements OnInit {
   liige: Liige;
-  liikmed: Liige[];
+  liikmed = new Array<Liige>() ;
   public rowsOnPage = 10;
-public sortBy = "lastname";
-public sortOrder = "asc";
+  public sortBy = "lastname";
+  public sortOrder = "asc";
+  subscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private adminStartService: AdminStartService
-  ) {}
+  ) {
+
+  }
 
   ngOnInit(): void {
-this.getLiikmed();
   }
-  getLiikmed(): void {
-	this.adminStartService.getLiikmed().then(returnedliikmed => this.liikmed = returnedliikmed);
-	}
 }

@@ -16,6 +16,9 @@ var StatusPipe = (function () {
     }
     StatusPipe.prototype.transform = function (liikmed) {
         var _this = this;
+        if (liikmed == null) {
+            return null;
+        }
         this.filters.subscribe(function (res) {
             _this.statusToDisplay = Object.keys(res[0]).filter(function (key) { return res[0][key]; });
         });

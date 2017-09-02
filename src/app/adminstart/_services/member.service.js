@@ -26,6 +26,12 @@ var MemberService = (function () {
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    MemberService.prototype.updateMember = function (member) {
+        return this.http.put("http://localhost:3010/api/v1/liikmed", member, this.options)
+            .toPromise()
+            .then(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     MemberService.prototype.getTypes = function () {
         return this.http.get(this.typeUrl)
             .toPromise()
